@@ -19,12 +19,8 @@
         header("Access-Control-Allow-Origin: *");
         header('Content-Type: application/json');
         $json = json_encode($output,JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
-        if(isset($_GET['pretty'])) {
-            echo str_replace("\/", "/", jsonReadable(parse($json)));
-        } else {
-            $json = preg_replace('!\\r?\\n!', "", $json);
-            echo parse($json);
-        }
+        $json = preg_replace('!\\r?\\n!', "", $json);
+        echo parse($json);
     }else{
         echo 'error';
     }
