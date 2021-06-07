@@ -20,7 +20,7 @@
         header('Content-Type: application/json');
         $json = json_encode($output,JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         $json = preg_replace('!\\r?\\n!', "", $json);
-        echo parse($json);
+        print $json;
     }else{
         echo 'error';
     }
