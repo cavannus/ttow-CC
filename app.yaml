@@ -5,7 +5,7 @@ handlers:
 entrypoint:
   serve handler.php
 env_variables:
-  MYSQL_HOST: mysql:unix_socket=/cloudsql/wayang-314813:asia-southeast2:ttow
+  MYSQL_HOST: mysql:unix_socket=/cloudsql/wayang-316115:asia-southeast2:ttow
   MYSQL_DB: wayangkulit
-  MYSQL_USER: root  
+  MYSQL_USER: root
   MYSQL_PASS: wyg2021
