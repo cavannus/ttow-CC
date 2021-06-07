@@ -18,13 +18,13 @@
     if(!empty($output)){
         header("Access-Control-Allow-Origin: *");
         header('Content-Type: application/json');
-        $data = json_encode($output,JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
-        
-        function jsonEscape($d)  {
-            return $d.replace(/\n/g, "\\\\n").replace(/\r/g, "\\\\r").replace(/\t/g, "\\\\t");
+        $json = json_encode($output,JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+        if(isset($_GET['pretty'])) {
+            echo str_replace("\/", "/", jsonReadable(parse($json)));
+        } else {
+            $json = preg_replace('!\\r?\\n!', "", $json);
+            echo parse($json);
         }
-        $dataObj = JSON.parse(jsonEscape($data));
-        echo $dataObj;
     }else{
         echo 'error';
     }
