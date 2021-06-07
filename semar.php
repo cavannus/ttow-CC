@@ -18,9 +18,7 @@
     if(!empty($output)){
         header("Access-Control-Allow-Origin: *");
         header('Content-Type: application/json');
-        $json = json_encode($output,JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
-        $json = preg_replace('!\\r?\\n!', "", $json);
-        print $json;
+        print json_encode($output,JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
     }else{
         echo 'error';
     }
