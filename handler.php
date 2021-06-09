@@ -15,7 +15,7 @@
             break;
         case '/semar.php':
             require 'semar.php';
-            break;
+            break; 
         case '/gareng':
             require 'gareng.php';
             break;
@@ -33,6 +33,12 @@
             break;
         case '/bagong.php':
             require 'bagong.php';
+            break;
+        case '/getwayang.php':
+            require 'getwayang.php';
+            break;
+        case '/getcerita.php':
+            require 'getcerita.php';
             break;
     }
 ?>
